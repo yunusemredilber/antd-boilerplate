@@ -1,7 +1,5 @@
 # Ant Design Boilerplate
 
-### Try it now on [codesandbox.io](https://codesandbox.io/s/github/yunusemredilber/antd-boilerplate).
-
 | Function      | Packages      |
 | ------------- |:-------------:|
 | UI      | [ant-design](https://github.com/ant-design/ant-design) [ant-design-pro](https://github.com/ant-design/ant-design-pro) |
