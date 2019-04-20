@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import { Layout,Row,Divider,Typography } from 'antd';
 
-import { WaterWave } from 'ant-design-pro/lib/Charts'
 
 import {FormattedMessage} from 'react-intl';
 
 import { Timeline, Icon } from 'antd';
 
 import {NavLink} from "react-router-dom";
+
+
 
 const { Title,Text } = Typography;
 
@@ -52,11 +53,7 @@ class HomePage extends Component {
                             <Divider/>
                         </Timeline>
 
-                        <WaterWave
-                            height={161}
-                            title="Progress"
-                            percent={60}
-                        />
+
                         </Row>
                     </div>
                 </Content>
