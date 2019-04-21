@@ -1,4 +1,6 @@
 # Ant Design Boilerplate
+![GitHub repo size](https://img.shields.io/github/repo-size/yunusemredilber/antd-boilerplate.svg) ![GitHub](https://img.shields.io/github/license/yunusemredilber/antd-boilerplate.svg) ![GitHub package.json version](https://img.shields.io/github/package-json/v/yunusemredilber/antd-boilerplate.svg) ![GitHub last commit](https://img.shields.io/github/last-commit/yunusemredilber/antd-boilerplate.svg) ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/yunusemredilber/antd-boilerplate.svg)
+
 Try production build on [Netlify](https://ecstatic-feynman-ef95da.netlify.com/)
 
 Try development build in [codesandbox.io](https://codesandbox.io/s/github/yunusemredilber/antd-boilerplate)
