@@ -1,8 +1,11 @@
 # Ant Design Boilerplate
+Try production build on [Netlify](https://ecstatic-feynman-ef95da.netlify.com/)
+
+Try development build in [codesandbox.io](https://codesandbox.io/s/github/yunusemredilber/antd-boilerplate)
 
 | Function      | Packages      |
 | ------------- |:-------------:|
-| UI      | [ant-design](https://github.com/ant-design/ant-design) [ant-design-pro](https://github.com/ant-design/ant-design-pro) |
+| UI      | [ant-design](https://github.com/ant-design/ant-design) |
 | State management     | [redux](https://github.com/reduxjs/redux) [react-redux](https://github.com/reduxjs/react-redux) [redux-thunk](https://github.com/reduxjs/redux-thunk)    |
 | routing | [react-router](https://github.com/ReactTraining/react-router)     |
 | localization | [react-intl](https://github.com/yahoo/react-intl)     |
@@ -10,6 +13,7 @@
 Also [babel-plugin-import](https://github.com/ant-design/babel-plugin-import), [react-app-rewired](https://github.com/timarney/react-app-rewired), [less](https://github.com/less/less.js), [less-loader](https://github.com/webpack-contrib/less-loader) and [customize-cra](https://github.com/arackaf/customize-cra) used for Ant Design's smart import thing.
 
 ---
+### Quick Start
 1. `cd antd-boilerplate`
 2. `npm install` (This one will take some time)
 3. `npm start`
