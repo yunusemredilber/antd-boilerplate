@@ -9,11 +9,7 @@ import {injectIntl} from 'react-intl';
 
 import { withRouter } from 'react-router-dom';
 
-function addStyleString(str) {
-    const node = document.createElement('style');
-    node.innerHTML = str;
-    document.body.appendChild(node);
-}
+
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
 
@@ -48,7 +44,6 @@ class TopNavBar extends Component {
     };
 
     handleCancel = (e) => {
-        console.log(e);
         this.setState({
             visible: false,
         });
@@ -65,21 +60,10 @@ class TopNavBar extends Component {
         return pathName;
     };
 
-    componentDidMount()
-    {
-        if (this.props.env.isMobile)
-            addStyleString(".ant-page-header-title-view-title{\n" +
-                "  margin-top: 7px !important;\n" +
-                "}");
-        else
-            addStyleString(".ant-page-header-title-view-title{\n" +
-                "  margin-top: 0px !important;\n" +
-                "}");
 
-    }
 
     render() {
-        const pathName = this.formatPathName(this.props.history.location.pathname);
+        
         const isMainPage = ["","/"].includes(this.props.history.location.pathname );
         const pageHeaderOnBack = isMainPage?{}:{onBack:() => window.history.back()};
 
@@ -87,7 +71,7 @@ class TopNavBar extends Component {
             <div>
                 <PageHeader
                     {...pageHeaderOnBack}
-                    title={<div style={{marginTop:"7px"}}>{(isMainPage)?this.props.intl.messages["app.title"]:pathName}</div>}
+                    title={<div style={{marginTop:"7px"}}>{this.props.intl.messages["app.title"]}</div>}
                     extra={(this.props.env.siderMenuCollapsed)?[
 
                         <Dropdown key="3" overlay={menu} placement="bottomRight">
@@ -104,7 +88,7 @@ class TopNavBar extends Component {
             <div>
                 <PageHeader
                     {...pageHeaderOnBack}
-                    title={<div style={{marginTop:"7px"}}>{(isMainPage)?this.props.intl.messages["app.title"]:pathName}</div>}
+                    title={<div style={{marginTop:"7px"}}>{this.props.intl.messages["app.title"]}</div>}
                     subTitle={this.props.intl.messages["app.subtitle"]}
                     extra={[
                         <Button key="1">Operation</Button>,

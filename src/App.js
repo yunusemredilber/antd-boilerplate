@@ -6,11 +6,10 @@ import {Layout} from "antd";
 
 import NavBar from "./components/NavBar";
 import TopNavBar from "./components/TopNavBar";
+import Footer from "./components/Footer";
+
 import Routes from "./Routes";
 
-const {
-    Footer,Header
-} = Layout;
 
 class App extends Component {
 
@@ -36,13 +35,11 @@ class App extends Component {
                 <Layout>
                     <NavBar/>
                     <Layout>
-                        <Header style={{ background: '#fff', padding: 0 }} >
+                        <Layout.Header style={{ background: '#fff', padding: 0 }} >
                             <TopNavBar/>
-                        </Header>
+                        </Layout.Header>
                             <Routes/>
-                        <Footer style={{ textAlign: 'center' }}>
-                            Ant Design Boilerplate ©2019 Created by Yunus Emre Diber
-                        </Footer>
+                            <Footer/>
                     </Layout>
                 </Layout>
             </div>

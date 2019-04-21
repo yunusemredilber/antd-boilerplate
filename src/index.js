@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // Css Imports
 import './index.css';
+
+
 // Component Imports
 import App from './App';
 // Service Worker Import
@@ -13,6 +15,11 @@ import {store} from './redux/store';
 import ConnectedIntlProvider from './components/ConnectedIntlProvide';
 // Router Import
 import {BrowserRouter as Router} from "react-router-dom";
+
+
+if (process.env.NODE_ENV !== "production") {
+    import ('antd/dist/antd.css');
+}
 
 
 ReactDOM.render(

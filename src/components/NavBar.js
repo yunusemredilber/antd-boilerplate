@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon} from 'antd';
 
 import {setCollapsed} from "../redux/actions/env-actions";
 
 import {injectIntl} from 'react-intl';
 
-import { Link } from 'react-router-dom';
+import { Link,withRouter } from 'react-router-dom';
 
 const {
     Sider,
@@ -26,23 +26,30 @@ class NavBar extends Component {
     };
 
     render() {
-
+        // When adding new menu item give it's key the pathname
+        //this.props.location.pathname
         const siderProp = (this.props.env.isMobile)?
             {   breakpoint:"lg",
                 collapsedWidth:"0",
                 collapsible:true
                 }:
             {collapsible:true};
+        const navBarTheme = "light";
+        const menuStyle = { // laggy for now
+           // position:'fixed',overflow: "hidden !important",maxWidth:"200px"
+        };
         return (
-
             <Sider
                 {...siderProp}
                 collapsed={this.props.env.siderMenuCollapsed}
                 onCollapse={this.onCollapse}
+                theme={navBarTheme}
+                style={{ zIndex: 10}}
             >
-                <div className="logo" />
-                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                    <Menu.Item key="1">
+
+                <div className="logo"/>
+                <Menu theme={navBarTheme} defaultSelectedKeys={[this.props.location.pathname]} mode="inline" style={menuStyle}>
+                    <Menu.Item key="/">
                         <Link to="/">
                             <Icon type="home" />
                             <span>{this.props.intl.messages["nav.Home"]}</span>
@@ -61,7 +68,7 @@ class NavBar extends Component {
                         <Menu.Item key="5">{this.props.intl.messages["nav.Test"]}</Menu.Item>
                     </SubMenu>
 
-                        <Menu.Item key="9">
+                        <Menu.Item key="/getting-started">
                             <Link to="/getting-started">
                                 <Icon type="file" />
                                 <span>{this.props.intl.messages["nav.gettingStarted"]}</span>
@@ -69,6 +76,7 @@ class NavBar extends Component {
                         </Menu.Item>
 
                 </Menu>
+
             </Sider>
 
 
@@ -83,4 +91,4 @@ const mapDispatchToProps = {
     setCollapsed
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(injectIntl(NavBar));
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(injectIntl(NavBar)));

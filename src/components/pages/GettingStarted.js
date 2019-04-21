@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 
-import {Layout, Typography,Tree,Icon,Divider,notification,Button} from 'antd';
-
+import {Typography,Tree,Icon,Divider,notification,Button,Anchor} from 'antd';
+import { Link } from 'react-router-dom';
+import PageLayout from "../PageLayout";
 const { Title,Text } = Typography;
-const {
-    Content
-} = Layout;
+
+
 
 const DirectoryTree = Tree.DirectoryTree;
 const { TreeNode } = Tree;
@@ -161,17 +161,46 @@ class GettingStarted extends Component {
         openNotification(`https://github.com/yunusemredilber/antd-boilerplate/${isBlob?"blob":"tree"}/master${path}`,fileName,isFolder);
     };
 
-    onExpand = () => {
-        console.log('Trigger Expand');
-    };
 
     render() {
+        const Content = () => (
+                <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+
+                    <Title level={2}>Getting Started Guideline<Link to="#getting-started-guideline" id={"getting-started-guideline"}> #</Link></Title>
+                    <Text>
+                        This guideline shows what operations can be done and how to done.
+                        Before we start, let's look what is our folder structure:
+                    </Text>
+
+                    <Directory/>
+                    <Divider/>
+
+                    <Title level={4}>Second Part<Link to="#second-part" id={"second-part"}> #</Link></Title>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+                    <p>Lorem Ipsum</p><br/>
+
+                </div>
+        );
 
         const Directory = () => (
             <DirectoryTree
                 multiple
                 onSelect={this.onSelect}
-                onExpand={this.onExpand}
             >
                 <TreeNode title="antd-boilerplate" key="0">
                     <TreeNode title="public" key="0-0">
@@ -235,21 +264,17 @@ class GettingStarted extends Component {
             </DirectoryTree>
         );
 
+        const Sider = () => (
+          <div>
+              <Anchor>
+                  <Anchor.Link href={"#getting-started-guideline"} title={"Getting Started Guideline"}/>
+                  <Anchor.Link href={"#second-part"} title={"Second Part"}/>
+              </Anchor>
+          </div>
+        );
+
         return (
-            <Content>
-                <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-
-                    <Title level={2}>Getting Started Guideline</Title>
-                    <Text>
-                        This guideline shows what operations can be done and how to done.
-                        Before we start, let's look what is our folder structure:
-                    </Text>
-
-                    <Directory/>
-                    <Divider/>
-
-                </div>
-            </Content>
+            <PageLayout content={<Content/>} sider={<Sider/>}/>
         );
     }
 }
